@@ -1,15 +1,10 @@
+require("newrelic");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+// Load New Relic agent
 
 const app = express();
-
-// Load New Relic agent
-const newrelic = require("newrelic");
-newrelic.instrumentLoadedModule(
-  "express", // the module's name, as a string
-  express // the module instance
-);
 
 app.use(bodyParser.json());
 
@@ -44,8 +39,10 @@ app.post("/users", async (req, res) => {
     const user = new User(req.body);
     await user.save();
     res.status(201).json(user);
+    newrelic.endTransaction();
   } catch (err) {
     res.status(400).json({ message: err.message });
+    newrelic.endTransaction();
   } finally {
     // End the transaction
     newrelic.endTransaction();
@@ -59,8 +56,10 @@ app.get("/users", async (req, res) => {
   try {
     const users = await User.find({});
     res.json({ users });
+    newrelic.endTransaction();
   } catch (err) {
     res.status(500).json({ message: err.message });
+    newrelic.endTransaction();
   } finally {
     // End the transaction
     // transaction.then();
