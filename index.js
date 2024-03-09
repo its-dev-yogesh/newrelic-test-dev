@@ -5,7 +5,11 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Load New Relic agent
-require("newrelic");
+const newrelic = require("newrelic");
+newrelic.instrumentLoadedModule(
+  "express", // the module's name, as a string
+  express // the module instance
+);
 
 app.use(bodyParser.json());
 

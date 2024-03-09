@@ -4,7 +4,7 @@
   "description": "This is the Dev Api of New Relic Integration",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node -r newrelic server.js",
     "test": "dev"
   },
   "author": "",
