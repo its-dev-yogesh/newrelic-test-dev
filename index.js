@@ -15,11 +15,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "mongodb+srv://testdb12com:ETxElrM3o7WbZYNa@testdb.whvfu2j.mongodb.net/?retryWrites=true&w=majority&appName=testdb",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
+    "mongodb+srv://testdb12com:ETxElrM3o7WbZYNa@testdb.whvfu2j.mongodb.net/?retryWrites=true&w=majority&appName=testdb"
   )
   .then(() => {
     console.log("Connected to MongoDB");
