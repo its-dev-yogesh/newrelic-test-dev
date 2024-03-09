@@ -15,15 +15,19 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "mongodb+srv://testdb12com:ETxElrM3o7WbZYNa@testdb.whvfu2j.mongodb.net/?retryWrites=true&w=majority&appName=testdb"
+    "mongodb+srv://testdb12com:ETxElrM3o7WbZYNa@testdb.whvfu2j.mongodb.net/?retryWrites=true&w=majority&appName=testdb",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
   )
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log("Connected To MongoDB Database");
   })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB", err);
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
   });
-
+mongoose.Promise = global.Promise;
 const User = mongoose.model("User", {
   name: String,
   mobile: String,
