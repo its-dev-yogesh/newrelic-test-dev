@@ -38,8 +38,7 @@ const User = mongoose.model("User", {
 
 app.post("/users", async (req, res) => {
   // Start a transaction
-  const transaction =
-    require("newrelic").startBackgroundTransaction("Create User");
+  const transaction = require("newrelic").startWebTransaction("Create User");
 
   try {
     const user = new User(req.body);
@@ -49,14 +48,13 @@ app.post("/users", async (req, res) => {
     res.status(400).json({ message: err.message });
   } finally {
     // End the transaction
-    // transaction.then();
+    newrelic.endTransaction();
   }
 });
 
 app.get("/users", async (req, res) => {
   // Start a transaction
-  const transaction =
-    require("newrelic").startBackgroundTransaction("Get Users");
+  const transaction = require("newrelic").startWebTransaction("Get Users");
 
   try {
     const users = await User.find({});
@@ -66,6 +64,7 @@ app.get("/users", async (req, res) => {
   } finally {
     // End the transaction
     // transaction.then();
+    newrelic.endTransaction();
   }
 });
 
