@@ -12,10 +12,10 @@ exports.config = {
   app_name: ["housingcart"],
   /**
    * Your New Relic license key.
-   * ec27988e59b6318c0a062ec1b837025eFFFFNRAL
+   *
    *
    */
-  license_key: "d016ffd7d507a5ab0a4ffe799bf6124dFFFFNRAL",
+  license_key: "ec27988e59b6318c0a062ec1b837025eFFFFNRAL",
 
   distributed_tracing: {
     enabled: true,
