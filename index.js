@@ -51,19 +51,19 @@ app.post("/users", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   // Start a transaction
-  const transaction = require("newrelic").startWebTransaction("Get Users");
+  // const transaction = require("newrelic").startWebTransaction("Get Users");
 
   try {
     const users = await User.find({});
     res.json({ users });
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   } catch (err) {
     res.status(500).json({ message: err.message });
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   } finally {
     // End the transaction
     // transaction.then();
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   }
 });
 
