@@ -4,7 +4,7 @@
   "description": "This is the Dev Api of New Relic Integration",
   "main": "index.js",
   "scripts": {
-    "start": "NEW_RELIC_APP_NAME=testapp NEW_RELIC_LICENSE_KEY=d016ffd7d507a5ab0a4ffe799bf6124dFFFFNRAL node -r newrelic index.js",
+    "start": "NEW_RELIC_APP_NAME=testapp NEW_RELIC_LICENSE_KEY=d016ffd7d507a5ab0a4ffe799bf6124dFFFFNRAL node --experimental-loader=newrelic/esm-loader.mjs index.js",
     "test": "dev"
   },
   "author": "",
