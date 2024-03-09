@@ -33,19 +33,19 @@ const User = mongoose.model("User", {
 
 app.post("/users", async (req, res) => {
   // Start a transaction
-  const transaction = require("newrelic").startWebTransaction("Create User");
+  // const transaction = require("newrelic").startWebTransaction("Create User");
 
   try {
     const user = new User(req.body);
     await user.save();
     res.status(201).json(user);
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   } catch (err) {
     res.status(400).json({ message: err.message });
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   } finally {
     // End the transaction
-    newrelic.endTransaction();
+    // newrelic.endTransaction();
   }
 });
 
