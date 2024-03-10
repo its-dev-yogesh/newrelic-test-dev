@@ -4,7 +4,7 @@
   "description": "This is the Dev Api of New Relic Integration",
   "main": "index.js",
   "scripts": {
-    "start": "NEW_RELIC_APP_NAME=testdb NEW_RELIC_LICENSE_KEY=NRAK-MUIHZ9R4CYVVB8DKLW2YFMCDHC7 node -r newrelic index.js",
+    "start": "node -r newrelic index.js",
     "test": "dev"
   },
   "author": "",
