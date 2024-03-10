@@ -12,10 +12,8 @@ exports.config = {
   app_name: ["testdb"],
   /**
    * Your New Relic license key.
-   *
-   *
    */
-  license_key: "NRAK-MUIHZ9R4CYVVB8DKLW2YFMCDHC7",
+  license_key: "0c2aa2313cefba9b7578524e4cc2f1ceFFFFNRAL",
 
   distributed_tracing: {
     enabled: true,
@@ -26,7 +24,7 @@ exports.config = {
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level: "info",
+    level: "trace",
   },
   /**
    * When true, all request headers except for those listed in attributes.exclude

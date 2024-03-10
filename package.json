@@ -4,7 +4,7 @@
   "description": "This is the Dev Api of New Relic Integration",
   "main": "index.js",
   "scripts": {
-    "start": "node -r newrelic index.js",
+    "start": "node --experimental-loader=newrelic/esm-loader.mjs index.js",
     "test": "dev"
   },
   "author": "",
