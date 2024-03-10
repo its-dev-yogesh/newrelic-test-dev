@@ -9,13 +9,13 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ["housingcart"],
+  app_name: ["testdb"],
   /**
    * Your New Relic license key.
    *
    *
    */
-  license_key: "ec27988e59b6318c0a062ec1b837025eFFFFNRAL",
+  license_key: "NRAK-MUIHZ9R4CYVVB8DKLW2YFMCDHC7",
 
   distributed_tracing: {
     enabled: true,
